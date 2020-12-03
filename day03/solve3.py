@@ -1,0 +1,2 @@
+print(len([x for x in [r[(3*i) % len(r)] for i, r in enumerate([r.strip() for r in open('input.txt').readlines()])] if x == '#']))
+print((lambda f, i, b: (lambda r, a: r(r, *a))(lambda r, f, i, b: (r(r, f, i[1:], f(b, i[0])) if i else b), (f, i, b)))(lambda a, b: a * b, list(map(lambda m: len([x for x in [r[(m[0]*e//m[1]) % len(r)] for e, r in enumerate([r.strip() for r in open('input.txt').readlines()]) if e % m[1] == 0] if x == '#']), [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)])), 1))
