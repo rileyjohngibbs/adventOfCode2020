@@ -1,0 +1,2 @@
+print(sum(len((lambda f: lambda *a: f(f, *a))(lambda r, f, i, b: b if not i else r(r, f, i[1:], f(b, i[0])))(lambda a, b: a | set(b), g, set(g[0]))) for g in [g.split() for g in open('input.txt').read().split('\n\n')]))
+print(sum(len((lambda f: lambda *a: f(f, *a))(lambda r, f, i, b: b if not i else r(r, f, i[1:], f(b, i[0])))(lambda a, b: a & set(b), g, set(g[0]))) for g in [g.split() for g in open('input.txt').read().split('\n\n')]))
