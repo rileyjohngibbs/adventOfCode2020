@@ -7,8 +7,6 @@ def main():
     print(part2(passports))
 
 
-
-
 class PassportValidator:
 
     OPTIONAL = {'cid'}
