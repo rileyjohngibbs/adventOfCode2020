@@ -39,7 +39,11 @@ def part2(input_: List[int]) -> int:
 def memoize(func):
     memo = {}
     def wrapper(n):
-        value = memo.setdefault(n, func(n))
+        if n in memo:
+            value = memo[n]
+        else:
+            value = func(n)
+            memo[n] = value
         return value
     return wrapper
 
