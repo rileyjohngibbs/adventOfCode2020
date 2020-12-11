@@ -47,7 +47,7 @@ class Grid:
         return '\n'.join(''.join(r) for r in self.seats)
 
     def count_occupied(self) -> int:
-        return len([s for r in self.seats for s in r])
+        return len([s for r in self.seats for s in r if s == OCCUPIED])
 
     def move_people(self, visible: bool = False) -> List[List[str]]:
         if visible:
