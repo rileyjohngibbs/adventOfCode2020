@@ -1,3 +1,4 @@
+import time
 from typing import List, Optional
 
 FLOOR = '.'
@@ -7,8 +8,13 @@ EMPTY = 'L'
 
 def main():
     input_ = load_input()
+    start = time.time()
     print(part1(input_))
+    mid = time.time()
+    print(f'Part 1 time: {mid - start}')
     print(part2(input_))
+    end = time.time()
+    print(f'Part 2 time: {end - mid}')
 
 
 def load_input() -> List[int]:
