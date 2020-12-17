@@ -19,7 +19,7 @@ def main(*args):
     print(f'Part 2 time: {end - mid}')
 
 
-def load_input(test: bool = False) -> List[int]:
+def load_input(test: bool = False) -> str:
     filename = f'{"test" * test}input.txt'
     with open(filename) as f:
         return f.read()
@@ -30,7 +30,7 @@ Vector = Tuple[int, ...]
 
 class Space:
 
-    NEIGHBOR_VECTORS: Tuple[Vector] = tuple(
+    NEIGHBOR_VECTORS: Tuple[Vector, ...] = tuple(
         (x, y, z)
         for z in range(-1, 2)
         for y in range(-1, 2)
@@ -92,7 +92,7 @@ class Space:
 
 class HyperSpace(Space):
 
-    NEIGHBOR_VECTORS: Tuple[Vector] = tuple(
+    NEIGHBOR_VECTORS: Tuple[Vector, ...] = tuple(
         (x, y, z, w)
         for z in range(-1, 2)
         for y in range(-1, 2)
@@ -100,8 +100,6 @@ class HyperSpace(Space):
         for w in range(-1, 2)
         if (x, y, z, w) != (0, 0, 0, 0)
     )
-
-    active_cubes: Set[Vector]
 
     def __init__(self, input_: str):
         cubes = [
