@@ -1,7 +1,8 @@
 from enum import Enum
 import sys
 import time
-from typing import Iterable, List, Set, Tuple
+from typing import Iterable, Set, Tuple
+
 
 class CubeStatus(Enum):
     INACTIVE = '.'
