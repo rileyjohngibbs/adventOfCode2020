@@ -1,0 +1,17 @@
+Expression:
+    Mult
+
+Mult:
+    Add MultTail
+
+MultTail:
+    * Mult
+    None
+
+Add:
+    num AddTail
+    ( Mult ) AddTail
+
+AddTail:
+    + Add
+    None
